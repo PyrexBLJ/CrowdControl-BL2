@@ -1,0 +1,17 @@
+InteractiveObjects = {
+    "redchest": ["GD_Balance_Treasure.InteractiveObjects.InteractiveObj_TreasureChest", "GD_Balance_Treasure.ChestGrades.ObjectGrade_TreasureChest", "ThresherRaid_P", "Basegame"],
+    "weaponvendor": ["GD_Balance_Shopping.VendingMachines.VendingMachine_Weapons_Definition", "GD_Balance_Shopping.VendingMachineGrades.ObjectGrade_VendingMachine_Weapons", "SanctuaryAir_P", "Basegame"],
+    "ammovendor": ["GD_Balance_Shopping.VendingMachines.InteractiveObj_VendingMachine_GrenadesAndAmmo", "GD_Balance_Shopping.VendingMachineGrades.ObjectGrade_VendingMachine_GrenadesAndAmmo", "SanctuaryAir_P", "Basegame"],
+    "healthvendor": ["GD_Balance_Shopping.VendingMachines.InteractiveObj_VendingMachine_HealthItems", "GD_Balance_Shopping.VendingMachineGrades.ObjectGrade_VendingMachine_HealthItems", "SanctuaryAir_P", "Basegame"],
+    "eridiumslotmachine": ["GD_Aster_EridiumSlotMachine.EridiumSlotMachine", "GD_Aster_EridiumSlotMachine.Populations.BD_EridiumSlotMachine", "Village_P", "Aster"],
+    "torgueslotmachine": ["GD_Iris_SlotMachine.Iris_SlotMachine", "GD_Iris_SlotMachine.Populations.BD_Iris_SlotMachine", "Iris_Moxxi_P", "Iris"],
+    "normalslotmachine": ["gd_slotmachine.SlotMachine", "gd_slotmachine.Populations.BD_SlotMachine", "SanctuaryAir_P", "Basegame"],
+    "slagbarrel": ["GD_Explosives.Barrels.ExplodingBarrelAmp", "GD_Explosives.BalanceDefs.BD_BarrelAmp", "RobotSlaughter_P", "Basegame"],
+    "corrosivebarrel": ["GD_Explosives.Barrels.ExplodingBarrelCorrosive", "GD_Explosives.BalanceDefs.BD_BarrelCorrosive", "RobotSlaughter_P", "Basegame"],
+    "explosivebarrel": ["GD_Explosives.Barrels.ExplodingBarrelExplosive", "GD_Explosives.BalanceDefs.BD_BarrelExplosive", "RobotSlaughter_P", "Basegame"],
+    "shockbarrel": ["GD_Explosives.Barrels.ExplodingBarrelShock", "GD_Explosives.BalanceDefs.BD_BarrelShock", "RobotSlaughter_P", "Basegame"],
+    "firebarrel": ["GD_Explosives.Barrels.ExplodingBarrelIncendiary", "GD_Explosives.BalanceDefs.BD_BarrelIncendiary", "RobotSlaughter_P", "Basegame"],
+    "shockcactus": ["GD_ElementalPlants.InteractiveObjects.ShockCactus", "GD_ElementalPlants.BalanceDefs.BD_ShockCactus", "Fridge_Dynamic", "Basegame"],
+    "firemelon": ["GD_ElementalPlants.InteractiveObjects.Firemelon", "GD_ElementalPlants.BalanceDefs.BD_Firemelon", "CraterLake_Combat", "Basegame"],
+    "acidolus": ["GD_ElementalPlants.InteractiveObjects.Acidolus", "GD_ElementalPlants.BalanceDefs.BD_Acidolus", "Caverns_P", "Basegame"],
+}
