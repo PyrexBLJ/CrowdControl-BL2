@@ -270,6 +270,7 @@ class OneShotKills(Effect):
     def run_effect(self):
         if AmIHost():
             add_hook("WillowGame.WillowAIPawn:TakeDamage", Type.POST, "insta_kill_hook", self.instakill)
+            add_hook("WillowGame.WillowVehicle:TookDamageFromEnemy", Type.POST, "insta_kill_hook_cars", self.instakill)
         else:
             SendToHost(self)
             self.display_name = "One Shot Kills"
@@ -278,6 +279,7 @@ class OneShotKills(Effect):
     def stop_effect(self):
         if AmIHost():
             remove_hook("WillowGame.WillowAIPawn:TakeDamage", Type.POST, "insta_kill_hook")
+            remove_hook("WillowGame.WillowVehicle:TookDamageFromEnemy", Type.POST, "insta_kill_hook_cars")
             self.display_name = "One Shot Kills Off"
         return super().stop_effect()
     
