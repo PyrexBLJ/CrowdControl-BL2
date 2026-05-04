@@ -13,8 +13,11 @@ class LaunchPlayer(Effect):
 
     def run_effect(self, response = "Success", respond = True):
         if AmIHost():
-            GetPlayerCharacter(self.pc).DoJump(False)
-            GetPlayerCharacter(self.pc).Velocity.Z += 100000
+            if "WillowVehicle" in str(self.pc.Pawn):
+                self.pc.Pawn.Mesh.AddForce(make_struct("Vector", X=0, Y=0, Z=100000000))
+            else:
+                GetPlayerCharacter(self.pc).DoJump(False)
+                GetPlayerCharacter(self.pc).Velocity.Z += 100000
         else:
             SendToHost(self)
         return super().run_effect(response, respond)
