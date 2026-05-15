@@ -77,16 +77,33 @@ class GiveCurrencyEffect(Effect):
         if AmIHost():
             if self.args[0] == "Eridium":
                 currency = 1
+                if self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount + 500 > 500:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount = 500
+                else:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
+
             elif self.args[0] == "Cash":
                 currency = 0
+                self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
+
             elif self.args[0] == "SeraphCrystal":
                 currency = 2
+                if self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount + 120 > 999:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount = 999
+                else:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
+
             elif self.args[0] == "TorgueToken":
                 currency = 4
+                if self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount + 613 > 999:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount = 999
+                else:
+                    self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
+
             else:
                 currency = 0 #default to money ig
+                self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
 
-            self.pc.PlayerReplicationInfo.Currency[currency].CurrentAmount += int(self.args[1])
             self.display_name = f"Gave {str(self.args[1])} {str(self.args[0])}"
         else:
             SendToHost(self)

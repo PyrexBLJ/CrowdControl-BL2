@@ -3,11 +3,11 @@ import time
 import select
 import json
 import base64
-from mods_base import build_mod, hook, ButtonOption, DropdownOption #type: ignore
-from unrealsdk.unreal import BoundFunction, UObject, WrappedStruct #type: ignore
-from unrealsdk.hooks import Type #type: ignore
+from mods_base import build_mod, hook, ButtonOption, DropdownOption
+from unrealsdk.unreal import BoundFunction, UObject, WrappedStruct
+from unrealsdk.hooks import Type
 from typing import Any
-from .Utils import AmIHost, CrowdControl_PawnList_Unpossessed, CrowdControl_PawnList_Possessed
+from .Utils import AmIHost
 from .Comms import *
 from .Effect import *
 from .OneHealth import *
@@ -37,6 +37,7 @@ connecting = False
 
 ResetConnection: ButtonOption = ButtonOption("Reset Connection To CC App", on_press = lambda _: connect_socket(host, port), description="If you didnt get the \"CrowdControl: Connected!\" message in the console (from opening the game before the cc app for example) click this button to retry the connection.")
 ViewerBadassCooldown: DropdownOption = DropdownOption("Viewer Badass Cooldown (mins)", "0", ["0", "5", "10", "15", "30", "60"], description="How many minutes to wait before another viewer badass is allowed to spawn after it dies.")
+EffectSound: DropdownOption = DropdownOption("Effect Sound", "None", ["None", "Ding", "Token", "Mission"], description="The sound to make whenever an effect activates.")
 
 def connect_socket(host, port):
     global client_socket, do_reset, connecting

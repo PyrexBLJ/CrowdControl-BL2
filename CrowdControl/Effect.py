@@ -29,6 +29,12 @@ class Effect:
         self.from_client: bool = False
         self.quantity = None
         
+    Sounds = {
+        "None": "None",
+        "Ding": "Ake_UI.UI_HUD.Ak_Play_UI_Alert_CoOp_Ding",
+        "Token": "Ake_UI.UI_HUD.Ak_Play_UI_HUD_Token_Unlocked",
+        "Mission": "Ake_UI.UI_Mission.Ak_Play_UI_Accept_Mission_03",
+    }
 
     def run_effect(self, response:str = "Success", respond:bool = True):
         #print(f"running effect {self.effect_name} with id {self.id}. the current args are {self.args} and its duration is {self.duration}")
@@ -36,6 +42,9 @@ class Effect:
         if hud != None:
             hud.ClearTrainingText()
             hud.AddTrainingText(f"{self.display_name}", "Crowd Control", 3.5 * ENGINE.GetCurrentWorldInfo().TimeDilation, unrealsdk.make_struct("Color"), "", False, 0, self.pc.PlayerReplicationInfo, True, 0)
+        from . import EffectSound
+        if EffectSound.value != "None":
+            self.pc.PlayUIAkEvent(unrealsdk.find_object("AkEvent", self.Sounds[EffectSound.value]))
         if not get_pc().PlayerReplicationInfo.bIsPartyLeader:
             respond = False
         if self.duration:

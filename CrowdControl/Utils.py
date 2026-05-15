@@ -56,6 +56,307 @@ def SendToHost(effect:Effect) -> None:
     effect.pc.ServerSpeech("CrowdControl", efdict["pc"].PlayerReplicationInfo.PlayerId, f"CrowdControl-{effect.effect_name}-{b64effectdict.decode()}")
     return None
     
+#why
+def FixDropsForLowLevels(rarity: str) -> None:
+    if rarity == "legendaryweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Pistols_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_SMG_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Shotguns_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_SniperRifles_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Launchers_07_LegendaryPlusPearl").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_06_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_05_Legendary").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_05_Legendary").MinGameStageRequirement = None
+    elif rarity == "purpleweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_05_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_04_VeryRare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_04_VeryRare").MinGameStageRequirement = None
+    elif rarity == "blueweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_04_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_03_Rare").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_03_Rare").MinGameStageRequirement = None
+    elif rarity == "greenweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_02_Uncommon").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_02_Uncommon").MinGameStageRequirement = None
+    elif rarity == "whiteweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_01_Common").MinGameStageRequirement = None
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_01_Common").MinGameStageRequirement = None
+
+def UndoFixDropsForLowLevels(rarity: str) -> None:
+    if rarity == "legendaryweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Pistols_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_SMG_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Shotguns_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_SniperRifles_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Gladiolus_Itempools.WeaponPools.Pool_Weapons_Launchers_07_LegendaryPlusPearl").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.GameStage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_13")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_14")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_16")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_06_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_05_Legendary")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_05_Legendary").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.GameStage_15")
+    elif rarity == "purpleweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_13")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_14")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_16")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_05_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_04_VeryRare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_04_VeryRare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+    elif rarity == "blueweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_13")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_14")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_16")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_04_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_03_Rare")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_03_Rare").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+    elif rarity == "greenweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_02")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_05")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_05")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_03")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_03")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_13")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_14")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_16")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_02_Uncommon")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_02_Uncommon").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+    elif rarity == "whiteweapon":
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Pistols_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_02")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_AssaultRifles_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_05")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SMG_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Shotguns_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_05")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_SniperRifles_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.WeaponPools.Pool_Weapons_Launchers_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_All_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_03")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Standard_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_03")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_All_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_10")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Corrosive_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Explosive_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Fire_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_NovaShields_Shock_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Roid_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_12")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_SpikeShields_All_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Juggernaut_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_08")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Booster_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_13")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Absorption_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_14")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Impact_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ShieldPools.Pool_Shields_Chimera_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_16")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.GrenadeModPools.Pool_GrenadeMods_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_07")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Assassin_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Merc_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Siren_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ClassModPools.Pool_ClassMod_Soldier_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Lilac_Itempools.ClassModPools.Pool_ClassMod_LilacPlayerClass_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Tulip_Itempools.ClassModPools.Pool_ClassMod_Mechromancer_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.LootSchedule_ClassMod_01_Common")
+        unrealsdk.find_object("ItemPoolDefinition", "GD_Itempools.ArtifactPools.Pool_Artifacts_01_Common").MinGameStageRequirement = unrealsdk.find_object("AttributeDefinition", "GD_Itempools.Scheduling.Gamestage_15")
+
+
+
 
 LootPools = {
     "legendaryweapon": "GD_Itempools.EnemyDropPools.Pool_GunsAndGear_06_Legendary", #quantiy:1
@@ -66,6 +367,8 @@ LootPools = {
 }
 
 def SpawnLoot(ItemPoolName:str, Quantity:int, Pawn:UObject):
+
+    FixDropsForLowLevels(ItemPoolName)
 
     ItemPoolData = find_object("ItemPoolDefinition", LootPools[ItemPoolName])
 
@@ -79,6 +382,8 @@ def SpawnLoot(ItemPoolName:str, Quantity:int, Pawn:UObject):
     bsl_obj.CircularScatterRadius = 50.0
     bsl_obj.CustomLocation = unrealsdk.make_struct("AttachmentLocationData", Location=unrealsdk.make_struct("Vector", X=InFrontOfPlayer(Pawn.Controller).X, Y=InFrontOfPlayer(Pawn.Controller).Y, Z=InFrontOfPlayer(Pawn.Controller).Z + 50), AttachmentBase=None, AttachmentName="")
     bsl_obj.ApplyBehaviorToContext(Pawn.Controller, IGNORE_STRUCT, None, None, None, IGNORE_STRUCT)
+
+    UndoFixDropsForLowLevels(ItemPoolName)
 
 
 PawnList = []
@@ -167,7 +472,7 @@ def SpawnPawn(enemytospawn: str, quantity: int, PC: UObject, name: str = "", fri
     for i in range(quantity):
         maxcost = popmaster.MaxActorCost
         popmaster.MaxActorCost = 999999999
-        actor = popmaster.SpawnActor(factory, None, InFrontOfPlayer(PC, 500), PC.Pawn.Controller.Rotation, PC.PlayerReplicationInfo.ExpLevel + PC.OverpowerChoiceValue + level_boost, 0)
+        actor = popmaster.SpawnActor(factory, None, InFrontOfPlayer(PC, 500), PC.Pawn.Controller.Rotation, PC.PlayerReplicationInfo.ExpLevel + PC.OverpowerChoiceValue + level_boost, 1)
         popmaster.MaxActorCost = maxcost
         
         if str(actor) != "None":

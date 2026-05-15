@@ -1,5 +1,6 @@
 {
     "options": {
+        "Effect Sound": "None",
         "Viewer Badass Cooldown (mins)": "0"
     },
     "enabled": true
