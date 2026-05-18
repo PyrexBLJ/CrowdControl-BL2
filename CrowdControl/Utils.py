@@ -432,7 +432,6 @@ def Circle(Location: None, Layers: 1, LayerIncrease: 2, Baseamount: 6, OffSet: 6
 
 def SpawnPawn(enemytospawn: str, quantity: int, PC: UObject, name: str = "", friendly: bool = False, level_boost: int = 0) -> List[UObject]:
     popmaster = unrealsdk.find_all("WillowPopulationMaster")[-1]
-    print(popmaster)
     maptoload = Enemies[enemytospawn][1]
 
     already_loaded = True
@@ -458,6 +457,9 @@ def SpawnPawn(enemytospawn: str, quantity: int, PC: UObject, name: str = "", fri
                 break
         if loaded == False:
             unrealsdk.load_package(maptoload)
+
+    if enemytospawn == "savagelee": # of course lee has to be difficult
+        PC.ConsoleCommand("set GD_Population_Psycho.Balance.Unique.PawnBalance_SavageLee PlayThroughs ((PlayThrough=1,DisplayName=\"Savage Lee\",TransformedNames=,OnSpawnCustomizations=,AttributeStartingValues=,CustomItemPoolIncludedLists=,CustomItemPoolList=,MeshMaterial=None))")
 
     factory = unrealsdk.construct_object("PopulationFactoryBalancedAIPawn", ENGINE.Outer)
     if name == "":
