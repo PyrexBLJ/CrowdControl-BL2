@@ -22,7 +22,7 @@ __all__ = ["Load", "RequestEffect", "NotifyEffect", "Internal"]
 Shared = None
 
 TIMEOUT = 15
-MOD_VERSION = "1.0.2"  # keep in sync with pyproject.toml
+MOD_VERSION = "1.0.3"  # keep in sync with pyproject.toml
 
 # SimpleTCP request types the CC app can send us
 REQ_EFFECT_TEST = 0

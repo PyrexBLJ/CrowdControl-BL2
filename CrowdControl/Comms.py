@@ -123,6 +123,7 @@ def RequestEffect(eid, effect_name, pc, viewer, viewers, source, duration, quant
         effect_cls.duration = duration
     except Exception:
         effect_cls.duration = 0
+    effect_cls.unique_identifier = pc.PlayerReplicationInfo.PlayerName
 
     effect_instances.add(effect_cls)
     effects.add(eid)

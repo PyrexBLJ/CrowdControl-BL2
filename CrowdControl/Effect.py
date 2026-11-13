@@ -28,6 +28,7 @@ class Effect:
         self.sourcedetails = None
         self.from_client: bool = False
         self.quantity = None
+        self.unique_identifier = None
         
     Sounds = {
         "None": "None",
@@ -56,15 +57,30 @@ class Effect:
                 NotifyEffect(self.id, response, self.effect_name, self.pc, self.duration * 1000)
         else:
             global effect_instances
-            effect_instances.remove(self)
+            effect_instances.discard(self)
             if respond:
                 NotifyEffect(self.id, response, self.effect_name, self.pc)
+
+    def fix_player_controller(self):
+        found_pc: bool = False
+        for playerState in ENGINE.GetCurrentWorldInfo().GRI.PRIArray:
+            if self.pc._get_address() == playerState.Owner._get_address():
+                found_pc = True
+        found_backup_pc: bool = False
+        if found_pc == False:                                                       # we have a problem the saved player controller object in this effect doesnt exist anymore, employ backup strat
+            for playerState in ENGINE.GetCurrentWorldInfo().GRI.PRIArray:
+                if self.unique_identifier == playerState.PlayerName:       # this is the best unique identifier i could find in the playerstate that i know is always there, i know its not ideal
+                    self.pc = playerState.Owner
+                    found_backup_pc = True
+        if found_backup_pc == False:                                                # we have a real problem, panic and just put it on the host now i guess
+            self.pc = get_pc()
 
     def stop_effect(self, response: str = "Finished", respond:bool = True): #available responses: https://developer.crowdcontrol.live/sdk/simpletcp/structure.html#effect-instance-messages
         self.is_running = False
         Effect.running_effects.remove(self.effect_name)
         if not get_pc().PlayerReplicationInfo.bIsPartyLeader:
             respond = False
+        self.fix_player_controller()
         if respond:
             NotifyEffect(self.id, response, self.effect_name, self.pc)
         if self.duration:
